@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&family=Fredoka:wght@500;700&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="confetti-canvas"></canvas>
+    <div class="container">
+        <h1 class="bday-title">🎉 Happy Birthday! 🎂</h1>
+        <p id="bday-message">Let's celebrate together!</p>
+        <button id="surprise-btn">Click for a Surprise!</button>
+        <div id="surprise" style="display:none;"></div>
+        <div id="sparkle-container"></div>
+        <div id="game-section" style="display:none; margin-top:30px;">
+            <h2 class="game-title">🍰 Catch the Falling Cake! 🍰</h2>
+            <p class="game-desc">Move the plate to catch as many cakes as you can in <span style="color:#00c3ff;font-weight:bold;">20 seconds</span>!</p>
+            <button id="start-game-btn" style="margin-bottom:12px; background:linear-gradient(90deg,#00c3ff,#ffff1c); color:#fff; font-size:1.1em; font-family:'Quicksand',Arial,sans-serif; font-weight:bold; border:none; border-radius:12px 4px 12px 4px; padding:10px 28px; cursor:pointer; box-shadow:0 2px 8px #00c3ff44; transition:background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;">Start Game</button>
+            <div id="cake-game">
+                <canvas id="cake-canvas" width="320" height="400"></canvas>
+                <div id="cake-score"></div>
+                <div id="cake-result"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

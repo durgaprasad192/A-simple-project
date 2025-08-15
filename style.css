@@ -1,0 +1,183 @@
+/* Sparkle (freckles) animation */
+#sparkle-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 20;
+}
+.sparkle {
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+@keyframes sparkle-pop {
+    0% { transform: scale(0.2) translateY(0); opacity: 0.2; }
+    60% { opacity: 1; }
+    80% { transform: scale(1.2) translateY(-18px); opacity: 1; }
+    100% { transform: scale(0.7) translateY(-30px); opacity: 0; }
+}
+body {
+    background: linear-gradient(135deg, #00c3ff 0%, #ffff1c 100%);
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Quicksand', 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.container {
+    background: linear-gradient(120deg, #f8fafc 60%, #fffbe6 100%);
+    padding: 54px 36px 38px 36px;
+    border-radius: 28px 8px 28px 8px;
+    box-shadow: 0 8px 32px #00c3ff22, 0 2px 8px #ffff1c44;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    min-width: 340px;
+    max-width: 95vw;
+    border: 3px dashed #00c3ff;
+}
+
+.bday-title {
+    color: #00c3ff;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    font-family: 'Luckiest Guy', 'Pacifico', cursive;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #ffff1c44, 0 0 12px #00c3ff44;
+    background: linear-gradient(90deg, #00c3ff, #ffff1c);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color: transparent; */
+    background-clip: text;
+}
+
+#bday-message {
+    font-size: 1.3em;
+    color: #00c3ff;
+    margin-bottom: 22px;
+    font-family: 'Fredoka', 'Quicksand', Arial, sans-serif;
+    text-shadow: 0 1px 4px #ffff1c88;
+}
+
+#surprise-btn {
+    background: linear-gradient(90deg, #00c3ff 0%, #ffff1c 100%);
+    color: #fff;
+    border: none;
+    padding: 15px 38px;
+    border-radius: 16px 4px 16px 4px;
+    font-size: 1.18em;
+    font-family: 'Fredoka', 'Quicksand', Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
+    box-shadow: 0 2px 8px #00c3ff44;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+#surprise-btn:hover {
+    background: linear-gradient(90deg, #ffff1c 0%, #00c3ff 100%);
+    color: #00c3ff;
+    box-shadow: 0 4px 16px #ffff1c44;
+    transform: scale(1.06) rotate(-2deg);
+}
+
+#surprise {
+    margin-top: 28px;
+    font-size: 1.5em;
+    color: #00c3ff;
+    animation: pop 0.7s;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 0 2px 8px #ffff1c44;
+}
+@keyframes pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    80% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+#game-section {
+    background: linear-gradient(120deg, #fffbe6 60%, #f8fafc 100%);
+    border-radius: 18px 6px 18px 6px;
+    padding: 24px 12px 20px 12px;
+    box-shadow: 0 4px 16px #00c3ff22;
+    margin-top: 32px;
+    max-width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #00c3ff;
+}
+.game-title {
+    font-family: 'Luckiest Guy', 'Pacifico', cursive;
+    color: #00c3ff;
+    font-size: 1.5em;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 8px #ffff1c44;
+}
+.game-desc {
+    font-family: 'Fredoka', 'Quicksand', Arial, sans-serif;
+    color: #00c3ff;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 4px #ffff1c88;
+}
+#start-game-btn {
+    margin-bottom: 12px;
+    background: linear-gradient(90deg,#00c3ff,#ffff1c);
+    color: #fff;
+    font-size: 1.1em;
+    font-family: 'Fredoka', 'Quicksand', Arial, sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px 4px 12px 4px;
+    padding: 10px 28px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #00c3ff44;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+#start-game-btn:hover {
+    background: linear-gradient(90deg,#ffff1c,#00c3ff);
+    color: #00c3ff;
+    box-shadow: 0 4px 16px #ffff1c44;
+    transform: scale(1.06) rotate(-2deg);
+}
+#cake-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 18px;
+}
+#cake-canvas {
+    border: 2px solid #00c3ff;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #fffbe6 0%, #f8fafc 100%);
+    border-radius: 18px 6px 18px 6px;
+    box-shadow: 0 2px 8px #00c3ff44;
+}
+#cake-score {
+    color: #00c3ff;
+    font-family: 'Fredoka', 'Quicksand', Arial, sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 2px;
+    text-shadow: 0 1px 4px #ffff1c88;
+}
+#cake-result {
+    color: #00c3ff;
+    font-family: 'Luckiest Guy', 'Pacifico', cursive;
+    font-size: 1.15em;
+    margin-top: 8px;
+    text-shadow: 0 2px 8px #ffff1c44;
+}
